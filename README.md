@@ -1,1 +1,1 @@
-# wedding-app
+# invitation-web

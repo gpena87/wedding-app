@@ -1,0 +1,195 @@
+<section id="confirmacion" class="mx-auto max-w-6xl bg-transparent px-4 py-10 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-2xl p-5 text-center sm:p-8">
+      <p class="text-base font-semibold uppercase tracking-widest text-[#957845]">asistencia</p>
+      <h2 class="mt-2 text-5xl font-light text-[#957845] sm:text-6xl tracking-wider">{{ title() }}</h2>
+      <p class="mb-4 text-[#957845]">{{ subtitle() }}</p>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate class="text-center">
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Nombre</legend>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            placeholder="Ej. Ana"
+            class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.name.touched && userForm.controls.name.invalid"
+            [class.ring-red-200]="userForm.controls.name.touched && userForm.controls.name.invalid"
+          />
+          <p
+            class="mt-0 min-h-0 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.name.touched && userForm.controls.name.invalid"
+            [class.invisible]="!(userForm.controls.name.touched && userForm.controls.name.invalid)"
+          >
+            Ingresa un nombre valido.
+          </p>
+        </fieldset>
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Apellido</legend>
+          <input
+            id="lastName"
+            type="text"
+            formControlName="lastName"
+            placeholder="Ej. Perez"
+            class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.lastName.touched && userForm.controls.lastName.invalid"
+            [class.ring-red-200]="userForm.controls.lastName.touched && userForm.controls.lastName.invalid"
+          />
+          <p
+            class="mt-0 min-h-2 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.lastName.touched && userForm.controls.lastName.invalid"
+            [class.invisible]="!(userForm.controls.lastName.touched && userForm.controls.lastName.invalid)"
+          >
+            Ingresa un apellido valido.
+          </p>
+        </fieldset>
+
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">¿Confirmas tu asistencia?</legend>
+          <select
+            id="confirmation"
+            formControlName="confirmation"
+            class="w-full appearance-none rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-base text-[#6f5735] transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.confirmation.touched && userForm.controls.confirmation.invalid"
+            [class.ring-red-200]="userForm.controls.confirmation.touched && userForm.controls.confirmation.invalid"
+          >
+            <option value="" disabled class="text-base">Selecciona una opción</option>
+            <option value="true" class="text-base">Sí</option>
+            <option value="false" class="text-base">No</option>
+          </select>
+          <p
+            class="mt-0 min-h-2 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.confirmation.touched && userForm.controls.confirmation.invalid"
+            [class.invisible]="!(userForm.controls.confirmation.touched && userForm.controls.confirmation.invalid)"
+          >
+            Selecciona una opcion.
+          </p>
+        </fieldset>
+
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Correo</legend>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="correo@ejemplo.com (opcional)"
+            class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.email.touched && userForm.controls.email.invalid"
+            [class.ring-red-200]="userForm.controls.email.touched && userForm.controls.email.invalid"
+          />
+          <p
+            class="mt-0 min-h-2 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.email.touched && userForm.controls.email.invalid"
+            [class.invisible]="!(userForm.controls.email.touched && userForm.controls.email.invalid)"
+          >
+            Ingresa un correo valido.
+          </p>
+        </fieldset>
+
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Telefono</legend>
+          <input
+            id="numberPhone"
+            type="tel"
+            formControlName="numberPhone"
+            placeholder="999 999 999 (opcional)"
+            class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.numberPhone.touched && userForm.controls.numberPhone.invalid"
+            [class.ring-red-200]="userForm.controls.numberPhone.touched && userForm.controls.numberPhone.invalid"
+          />
+          <p
+            class="mt-0 min-h-2 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.numberPhone.touched && userForm.controls.numberPhone.invalid"
+            [class.invisible]="!(userForm.controls.numberPhone.touched && userForm.controls.numberPhone.invalid)"
+          >
+            Ingresa un numero de telefono valido.
+          </p>
+        </fieldset>
+
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">¿Restriccion alimentaria?</legend>
+          <select
+            id="restriccion"
+            formControlName="restriccion"
+            class="w-full appearance-none rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-base text-[#6f5735] transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.restriccion.touched && userForm.controls.restriccion.invalid"
+            [class.ring-red-200]="userForm.controls.restriccion.touched && userForm.controls.restriccion.invalid"
+          >
+            <option value="" class="text-base">Selecciona una opción</option>
+            <option value="No" class="text-base">No</option>
+            <option value="Celiaco" class="text-base">Celiaco</option>
+            <option value="Vegano" class="text-base">Vegano</option>
+            <option value="Vegetariano" class="text-base">Vegetariano</option>
+            <option value="Otro" class="text-base">Otro</option>
+          </select>
+          <p
+            class="mt-0 min-h-2 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.restriccion.touched && userForm.controls.restriccion.invalid"
+            [class.invisible]="!(userForm.controls.restriccion.touched && userForm.controls.restriccion.invalid)"
+          >
+            Selecciona una opcion.
+          </p>
+        </fieldset>
+
+        <fieldset *ngIf="isOtroSelected()" class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Especifica tu restriccion</legend>
+          <input
+            id="restriccionOtro"
+            type="text"
+            formControlName="restriccionOtro"
+            placeholder="Ej. Sin gluten, sin lactosa..."
+            class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+          />
+        </fieldset>
+
+        <fieldset class="mb-0">
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Mensaje</legend>
+          <textarea
+            id="message"
+            formControlName="message"
+            placeholder="Escribe tu mensaje... (opcional)"
+            rows="4"
+            maxlength="200"
+            class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 leading-relaxed text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
+            [class.border-red-500]="userForm.controls.message.touched && userForm.controls.message.invalid"
+            [class.ring-red-200]="userForm.controls.message.touched && userForm.controls.message.invalid"
+          ></textarea>
+          <p class="mt-1 text-center text-base text-[#957845]">
+            {{ userForm.controls.message.value.length }}/200
+          </p>
+          <p
+            class="mt-0 min-h-2 text-base font-medium text-[#957845]"
+            [class.text-red-600]="userForm.controls.message.touched && userForm.controls.message.invalid"
+            [class.invisible]="!(userForm.controls.message.touched && userForm.controls.message.invalid)"
+          >
+            Ingresa un mensaje valido.
+          </p>
+        </fieldset>
+
+        <div class="mt-8 flex justify-center">
+          <button
+            type="submit"
+            class="rounded-full bg-[#957845] px-8 py-3 text-center text-base font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#7d5f35] hover:shadow-lg shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+            [disabled]="userForm.invalid || isSubmitting()"
+          >
+            <span *ngIf="isSubmitting()" class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]"></span>
+            {{ isSubmitting() ? 'Enviando...' : 'Enviar Confirmación' }}
+          </button>
+        </div>
+
+      </form>
+
+      <div *ngIf="errorMessage()" class="mt-4 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <span>{{ errorMessage() }}</span>
+      </div>
+
+      <div *ngIf="isSuccessModalOpen()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-sm">
+        <div class="w-full max-w-md rounded-2xl bg-white p-6 text-left shadow-2xl">
+          <h3 class="text-xl font-bold text-[#6f5735]">Registro completado</h3>
+          <p class="py-3 text-[#7c6541]">{{ successMessage() }}</p>
+          <div class="mt-3 flex justify-end">
+            <button type="button" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700" (click)="closeSuccessPopup()">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

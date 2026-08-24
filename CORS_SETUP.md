@@ -12,7 +12,7 @@ app.use(cors({
   origin: [
     'http://localhost:4200',           // desarrollo local
     'http://localhost:3000',           // si tienes otro puerto local
-    'https://wedding-app-production-30ec.up.railway.app'
+    'https://wedding-api-production-2678.up.railway.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -41,7 +41,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:4200',
-      'https://wedding-app-production-30ec.up.railway.app'
+      'https://wedding-api-production-2678.up.railway.app'
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -61,7 +61,7 @@ import fastifyCors from '@fastify/cors';
 app.register(fastifyCors, {
   origin: [
     'http://localhost:4200',
-    'https://wedding-app-production-30ec.up.railway.app'
+    'https://wedding-api-production-2678.up.railway.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -73,13 +73,13 @@ app.register(fastifyCors, {
 
 ```bash
 curl -i -X OPTIONS 'https://wedding-api-production-2678.up.railway.app/api/users' \
-  -H 'Origin: https://wedding-app-production-30ec.up.railway.app' \
+  -H 'Origin: https://wedding-api-production-2678.up.railway.app' \
   -H 'Access-Control-Request-Method: POST'
 ```
 
 Debe retornar headers como:
 ```
-Access-Control-Allow-Origin: https://wedding-app-production-30ec.up.railway.app
+Access-Control-Allow-Origin: https://wedding-api-production-2678.up.railway.app
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Allow-Headers: Content-Type, Authorization
 ```

@@ -10,7 +10,7 @@
 Ver [CORS_SETUP.md](./CORS_SETUP.md) para instrucciones según tu framework.
 
 **Resumen rápido:**
-- Agrega origen de tu frontend (ej: `https://tudominio.com`)
+- Agrega el origen del frontend: `https://wedding-app-production-30ec.up.railway.app`
 - Permite métodos: `GET`, `POST`, `PUT`, `DELETE`, `OPTIONS`
 - Permite headers: `Content-Type`, `Authorization`
 
@@ -52,7 +52,7 @@ Si falla:
 ## URLs en tu proyecto
 
 - **Desarrollo:** http://localhost:4200 → proxy → https://wedding-api-production-39c5.up.railway.app
-- **Producción:** https://tudominio.com → directamente → https://wedding-api-production-39c5.up.railway.app
+- **Producción:** https://wedding-app-production-30ec.up.railway.app → directamente → https://wedding-api-production-39c5.up.railway.app/api
 
 ## Cambiar URL de API en producción
 

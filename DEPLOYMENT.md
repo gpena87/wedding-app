@@ -51,8 +51,8 @@ Si falla:
 
 ## URLs en tu proyecto
 
-- **Desarrollo:** http://localhost:4200 → proxy → https://invitation-api-production-565d.up.railway.app
-- **Producción:** https://tudominio.com → directamente → https://invitation-api-production-565d.up.railway.app
+- **Desarrollo:** http://localhost:4200 → proxy → https://wedding-api-production-39c5.up.railway.app
+- **Producción:** https://tudominio.com → directamente → https://wedding-api-production-39c5.up.railway.app
 
 ## Cambiar URL de API en producción
 

@@ -72,7 +72,7 @@ app.register(fastifyCors, {
 ## Verificar que funciona
 
 ```bash
-curl -i -X OPTIONS 'https://wedding-api-production-39c5.up.railway.app/api/users' \
+curl -i -X OPTIONS 'https://wedding-api-production-2678.up.railway.app/api/users' \
   -H 'Origin: https://wedding-app-production-30ec.up.railway.app' \
   -H 'Access-Control-Request-Method: POST'
 ```

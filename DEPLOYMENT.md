@@ -52,7 +52,7 @@ Si falla:
 ## URLs en tu proyecto
 
 - **Desarrollo:** http://localhost:4200 → proxy → https://wedding-api-production-39c5.up.railway.app
-- **Producción:** https://wedding-app-production-30ec.up.railway.app → directamente → https://wedding-api-production-39c5.up.railway.app/api
+- **Producción:** https://wedding-app-production-30ec.up.railway.app → directamente → https://wedding-api-production-2678.up.railway.app/
 
 ## Cambiar URL de API en producción
 

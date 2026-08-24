@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://wedding-api-production-39c5.up.railway.app",
+    "target": "https://wedding-api-production-2678.up.railway.app",
     "secure": true,
     "changeOrigin": true,
     "logLevel": "debug"

@@ -5873,7 +5873,7 @@ function provideRouterInitializer() {
 var routes = [
   {
     path: "",
-    loadComponent: () => import("./chunk-TECUBDOK.js")
+    loadComponent: () => import("./chunk-2JXUOZMD.js")
   },
   {
     path: "**",

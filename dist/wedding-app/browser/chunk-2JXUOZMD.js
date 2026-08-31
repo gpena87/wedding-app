@@ -5779,34 +5779,37 @@ var StartComponent = class _StartComponent {
   static \u0275fac = function StartComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _StartComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StartComponent, selectors: [["app-start"]], decls: 25, vars: 0, consts: [["id", "inicio", 1, "relative", "min-h-screen", "overflow-hidden", "bg-[url('/assets/branding/Designer3.webp')]", "bg-cover", "bg-center", "bg-no-repeat", "lg:bg-[url('/assets/branding/Designer4.webp')]"], [1, "mx-auto", "flex", "w-full", "max-w-6xl", "flex-col", "items-center", "justify-start", "gap-2", "px-4", "pt-10", "pb-16", "text-center", "sm:px-6", "lg:px-8", "lg:pt-14", "lg:pb-24"], ["src", "assets/branding/noscasamos.svg", "alt", "Iniciales de los novios", "loading", "lazy", "decoding", "async", 1, "mx-auto", "mt-16", "h-auto", "w-full", "max-w-xs", "object-contain", "sm:mt-20"], ["aria-label", "Nombres de los novios", 1, "font-script", "mx-auto", "mt-4", "text-center", "text-4xl", "leading-none", "tracking-[0.09em]", "text-[#957845]", "sm:mt-6", "sm:text-5xl", "md:text-6xl"], [1, "font-sans", "tracking-normal", "text-[#957845]"], [1, "mx-auto", "mt-4", "max-w-2xl", "text-center", "text-xl", "leading-relaxed", "text-[#957845]", "sm:mt-6", "sm:text-2xl"]], template: function StartComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StartComponent, selectors: [["app-start"]], decls: 24, vars: 0, consts: [["id", "inicio", 1, "relative", "min-h-screen", "overflow-hidden", "bg-[url('/assets/branding/Designer3.webp')]", "bg-cover", "bg-center", "bg-no-repeat", "lg:bg-[url('/assets/branding/Designer4.webp')]"], [1, "mx-auto", "flex", "w-full", "max-w-6xl", "flex-col", "items-center", "justify-start", "gap-2", "px-4", "pt-10", "pb-16", "text-center", "sm:px-6", "lg:px-8", "lg:pt-14", "lg:pb-24"], ["src", "assets/branding/noscasamos.svg", "alt", "Iniciales de los novios", "loading", "lazy", "decoding", "async", 1, "mx-auto", "mt-16", "h-auto", "w-full", "max-w-xs", "object-contain", "sm:mt-20"], ["aria-label", "Nombres de los novios", 1, "font-script", "mx-auto", "mt-4", "text-center", "text-2xl", "font-normal", "leading-none", "tracking-[0.08em]", "text-[#957845]", "sm:mt-6", "sm:text-3xl", "md:text-4xl"], [1, "mx-auto", "mt-4", "max-w-2xl", "text-center", "text-2xl", "font-medium", "uppercase", "tracking-[0.2em]", "text-[#957845]", "sm:mt-6", "sm:text-3xl", "md:text-4xl"], ["aria-label", "Nombres de los novios", 1, "font-script", "mx-auto", "mt-4", "text-center", "text-4xl", "leading-none", "tracking-[0.09em]", "text-[#957845]", "sm:mt-6", "sm:text-5xl", "md:text-6xl"], [1, "mx-auto", "mt-4", "max-w-2xl", "text-center", "text-xl", "leading-relaxed", "text-[#957845]", "sm:mt-6", "sm:text-2xl"]], template: function StartComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275domElementStart(0, "section", 0)(1, "div", 1);
       \u0275\u0275domElement(2, "img", 2);
       \u0275\u0275domElementStart(3, "h1", 3);
-      \u0275\u0275text(4, " Ma. Jos\xE9");
+      \u0275\u0275text(4, " \xA1Nos Casamos!");
       \u0275\u0275domElement(5, "br");
-      \u0275\u0275text(6, " Gonz\xE1lez Rodr\xEDguez");
-      \u0275\u0275domElement(7, "br");
-      \u0275\u0275domElementStart(8, "span", 4);
-      \u0275\u0275text(9, "&");
       \u0275\u0275domElementEnd();
+      \u0275\u0275domElementStart(6, "h2", 4);
+      \u0275\u0275text(7, " MAR\xCDA JOS\xC9 ");
+      \u0275\u0275domElementEnd();
+      \u0275\u0275domElementStart(8, "h1", 5);
+      \u0275\u0275text(9, " Gonz\xE1lez Rodr\xEDguez");
       \u0275\u0275domElement(10, "br");
-      \u0275\u0275text(11, " Gonzalo");
-      \u0275\u0275domElement(12, "br");
-      \u0275\u0275text(13, " Pe\xF1a Guti\xE9rrez");
-      \u0275\u0275domElement(14, "br");
       \u0275\u0275domElementEnd();
-      \u0275\u0275domElementStart(15, "h2", 5);
-      \u0275\u0275text(16, "El amor es nuestra");
-      \u0275\u0275domElement(17, "br");
-      \u0275\u0275text(18, " promesa y ustedes son");
-      \u0275\u0275domElement(19, "br");
-      \u0275\u0275text(20, " el testimonio de nuestra");
-      \u0275\u0275domElement(21, "br");
-      \u0275\u0275text(22, " felicidad. ");
-      \u0275\u0275domElement(23, "br");
-      \u0275\u0275text(24, " Bienvenidos a nuestra historia.");
+      \u0275\u0275domElementStart(11, "h1", 5);
+      \u0275\u0275text(12, " y");
+      \u0275\u0275domElement(13, "br");
+      \u0275\u0275domElementEnd();
+      \u0275\u0275domElementStart(14, "h2", 4);
+      \u0275\u0275text(15, " GONZALO ");
+      \u0275\u0275domElementEnd();
+      \u0275\u0275domElementStart(16, "h1", 5);
+      \u0275\u0275text(17, " Pe\xF1a Gutierrez ");
+      \u0275\u0275domElementEnd();
+      \u0275\u0275domElementStart(18, "h2", 6);
+      \u0275\u0275text(19, "El amor es nuestra");
+      \u0275\u0275domElement(20, "br");
+      \u0275\u0275text(21, " promesa y ustedes son");
+      \u0275\u0275domElement(22, "br");
+      \u0275\u0275text(23, " el testimonio de nuestra felicidad.");
       \u0275\u0275domElementEnd()()();
     }
   }, encapsulation: 2 });
@@ -5823,21 +5826,44 @@ var StartComponent = class _StartComponent {
         decoding="async"
         class="mx-auto mt-16 h-auto w-full max-w-xs object-contain sm:mt-20"
       />
+
+      <h1
+        class="font-script mx-auto mt-4 text-center text-2xl font-normal leading-none tracking-[0.08em] text-[#957845] sm:mt-6 sm:text-3xl md:text-4xl"
+        aria-label="Nombres de los novios"
+      >
+        \xA1Nos Casamos!<br />
+      </h1>
+      
+
+      <h2 class="mx-auto mt-4 max-w-2xl text-center text-2xl font-medium uppercase tracking-[0.2em] text-[#957845] sm:mt-6 sm:text-3xl md:text-4xl">
+      MAR\xCDA JOS\xC9
+      </h2>
       <h1
         class="font-script mx-auto mt-4 text-center text-4xl leading-none tracking-[0.09em] text-[#957845] sm:mt-6 sm:text-5xl md:text-6xl"
         aria-label="Nombres de los novios"
       >
-        Ma. Jos\xE9<br />
         Gonz\xE1lez Rodr\xEDguez<br />
-        <span class="font-sans tracking-normal text-[#957845]">&</span><br />
-        Gonzalo<br />
-        Pe\xF1a Guti\xE9rrez<br />
       </h1>
+      <h1
+        class="font-script mx-auto mt-4 text-center text-4xl leading-none tracking-[0.09em] text-[#957845] sm:mt-6 sm:text-5xl md:text-6xl"
+        aria-label="Nombres de los novios"
+      >
+        y<br />
+      </h1>
+
+      <h2 class="mx-auto mt-4 max-w-2xl text-center text-2xl font-medium uppercase tracking-[0.2em] text-[#957845] sm:mt-6 sm:text-3xl md:text-4xl">
+      GONZALO
+      </h2>
+      <h1
+        class="font-script mx-auto mt-4 text-center text-4xl leading-none tracking-[0.09em] text-[#957845] sm:mt-6 sm:text-5xl md:text-6xl"
+        aria-label="Nombres de los novios"
+      >
+        Pe\xF1a Gutierrez
+      </h1>
+
       <h2 class="mx-auto mt-4 max-w-2xl text-center text-xl leading-relaxed text-[#957845] sm:mt-6 sm:text-2xl">El amor es nuestra<br />
       promesa y ustedes son<br />
-      el testimonio de nuestra<br />
-      felicidad. <br />
-      Bienvenidos a nuestra historia.</h2>
+      el testimonio de nuestra felicidad.</h2>
     </div>
   </section>
 ` }]
@@ -6166,4 +6192,4 @@ var HomePage = class _HomePage {
 export {
   HomePage as default
 };
-//# sourceMappingURL=chunk-TECUBDOK.js.map
+//# sourceMappingURL=chunk-2JXUOZMD.js.map

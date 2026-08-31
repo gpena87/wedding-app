@@ -1209,9 +1209,6 @@
       Verdana,
       sans-serif;
   }
-  .font-sans {
-    font-family: var(--font-sans);
-  }
   .font-script {
     font-family: var(--font-script);
   }
@@ -1263,6 +1260,10 @@
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
   }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -1271,6 +1272,10 @@
     --tw-tracking: 0.2em;
     letter-spacing: 0.2em;
   }
+  .tracking-\[0\.08em\] {
+    --tw-tracking: 0.08em;
+    letter-spacing: 0.08em;
+  }
   .tracking-\[0\.09em\] {
     --tw-tracking: 0.09em;
     letter-spacing: 0.09em;
@@ -1278,10 +1283,6 @@
   .tracking-\[0\.32em\] {
     --tw-tracking: 0.32em;
     letter-spacing: 0.32em;
-  }
-  .tracking-normal {
-    --tw-tracking: var(--tracking-normal);
-    letter-spacing: var(--tracking-normal);
   }
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
@@ -1639,6 +1640,10 @@
     }
     .md\:pb-0 {
       padding-bottom: 0px;
+    }
+    .md\:text-4xl {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
     .md\:text-6xl {
       font-size: var(--text-6xl);

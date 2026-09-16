@@ -1,0 +1,22 @@
+
+> wedding-app@0.0.0 start
+> ng serve --port 4201
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names               |  Raw size
+styles.css          | styles              |  57.02 kB | 
+main.js             | main                |   8.66 kB | 
+chunk-GOMI4DH3.js   | -                   |   1.37 kB | 
+
+                    | Initial total       |  67.05 kB
+
+Lazy chunk files    | Names               |  Raw size
+chunk-JSNQVR2Y.js   | home-page-component | 106.14 kB | 
+
+Application bundle generation complete. [1.150 seconds] - 2026-09-16T00:38:27.094Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4201/
+  ➜  press h + enter to show help

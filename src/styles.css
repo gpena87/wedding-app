@@ -1,7 +1,123 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-script: "Great Vibes", "Segoe Print", "Bradley Hand", cursive;
+  --font-script: "Cormorant Garamond", Georgia, serif;
+}
+
+:root {
+  --lilac-ink: #5b526d;
+  --lilac-muted: #817990;
+  --lilac-soft: #f1eff8;
+  --lilac-line: #d5cde6;
+  --lilac-accent: #8a78aa;
+  --lilac-deep: #6d5a8a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--lilac-accent) var(--lilac-soft);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lilac-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--lilac-soft);
+  border-radius: 999px;
+  background: var(--lilac-accent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lilac-deep);
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  background: #f8f6fb url('/assets/branding/lilac-garden-tematica.webp') center top / cover fixed no-repeat;
+  color: var(--lilac-ink);
+  font-family: "Montserrat", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(248, 246, 251, 0.78);
+  content: "";
+  pointer-events: none;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  background: transparent url('/assets/branding/lilac-garden-tematica.webp') center top / cover fixed no-repeat !important;
+}
+
+main > *:not(.page-scroll-overlay) {
+  position: relative;
+  z-index: 1;
+}
+
+main > div {
+  position: relative;
+  background: transparent;
+}
+
+main section:not(#inicio),
+main footer {
+  color: var(--lilac-ink);
+}
+
+main section:not(#inicio) h1,
+main section:not(#inicio) h2,
+main section:not(#inicio) h3,
+main section:not(#inicio) p,
+main section:not(#inicio) label,
+main section:not(#inicio) legend,
+main footer p,
+main footer h2,
+main footer a {
+  color: var(--lilac-ink) !important;
+}
+
+main section:not(#inicio) h2,
+main footer h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+main section:not(#inicio) button,
+main section:not(#inicio) a[href]:not([href^="#"]),
+main section:not(#inicio) form button {
+  background: var(--lilac-deep) !important;
+}
+
+main section:not(#inicio) input,
+main section:not(#inicio) select,
+main section:not(#inicio) textarea {
+  border-color: var(--lilac-line) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: var(--lilac-ink) !important;
+}
+
+main section:not(#inicio) article,
+main section:not(#inicio) [class*="rounded-2xl"],
+main section:not(#inicio) [class*="rounded-xl"] {
+  border-radius: 2px;
 }

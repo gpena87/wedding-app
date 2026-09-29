@@ -73,7 +73,11 @@ main {
   main {
     background-attachment: scroll;
     background-position: center top;
-    background-size: cover;
+    background-size: 100% 100%;
+  }
+
+  body::before {
+    background: rgba(248, 246, 251, 0.56);
   }
 }
 

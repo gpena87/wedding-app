@@ -43,23 +43,32 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #f8f6fb url('/assets/branding/lilac-garden-tematica.webp') center top / cover scroll no-repeat;
+  background: #f8f6fb;
   color: var(--lilac-ink);
   font-family: "Montserrat", sans-serif;
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url('/assets/branding/lilac-garden-tematica.webp') center top / cover no-repeat;
+  content: "";
+  pointer-events: none;
 }
 
 body::before {
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background: rgba(248, 246, 251, 0.78);
+  z-index: 1;
+  background: transparent;
   content: "";
   pointer-events: none;
 }
 
 body > app-root {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 main {
@@ -69,14 +78,8 @@ main {
 }
 
 @media (max-width: 767px) {
-  body {
-    background-attachment: scroll;
-    background-position: center top;
-    background-size: cover;
-  }
-
   body::before {
-    background: rgba(248, 246, 251, 0.56);
+    background: transparent;
   }
 }
 

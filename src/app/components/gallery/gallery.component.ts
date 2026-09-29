@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './gallery.component.html',
 })
-export class GalleryComponent {}
+export class GalleryComponent {
+  isImageLoading = true;
+}

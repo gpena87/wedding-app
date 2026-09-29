@@ -16,7 +16,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scrollbar-color: var(--lilac-accent) var(--lilac-soft);
   scrollbar-width: thin;
 }
@@ -57,7 +56,7 @@ body::before {
   pointer-events: none;
 }
 
-body > * {
+body > app-root {
   position: relative;
   z-index: 1;
 }
@@ -70,10 +69,10 @@ main {
 
 main > *:not(.page-scroll-overlay) {
   position: relative;
-  z-index: 1;
+  z-index: 40;
 }
 
-main > div {
+main > div:not(.page-scroll-overlay) {
   position: relative;
   background: transparent;
 }
@@ -114,6 +113,12 @@ main section:not(#inicio) textarea {
   border-color: var(--lilac-line) !important;
   background: rgba(255, 255, 255, 0.72) !important;
   color: var(--lilac-ink) !important;
+}
+
+main section:not(#inicio) input::placeholder,
+main section:not(#inicio) textarea::placeholder {
+  color: #b8a9cf !important;
+  opacity: 1;
 }
 
 main section:not(#inicio) article,

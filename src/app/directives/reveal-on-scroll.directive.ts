@@ -8,45 +8,11 @@ export class RevealOnScrollDirective implements AfterViewInit, OnDestroy {
   private readonly elementRef = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
   private observer: IntersectionObserver | null = null;
-  private static scrollTimeout: ReturnType<typeof setTimeout> | null = null;
-  private static scrollDirection: 'up' | 'down' = 'down';
-  private static lastScrollTop = 0;
-
-  constructor() {
-    // Inicializar listener global de scroll si no está ya configurado
-    if (!document.body.dataset['scrollListenerActive']) {
-      document.body.dataset['scrollListenerActive'] = 'true';
-      window.addEventListener('scroll', RevealOnScrollDirective.handleGlobalScroll, { passive: true });
-    }
-  }
-
-  private static handleGlobalScroll = (): void => {
-    const scrollTop = window.scrollY;
-    RevealOnScrollDirective.scrollDirection = scrollTop > RevealOnScrollDirective.lastScrollTop ? 'down' : 'up';
-    RevealOnScrollDirective.lastScrollTop = scrollTop;
-    const startSection = document.querySelector<HTMLElement>('#inicio');
-    const hasPassedStart = startSection
-      ? startSection.getBoundingClientRect().bottom <= 0
-      : scrollTop > 24;
-
-    document.body.classList.add('is-scrolling');
-    document.body.classList.toggle('is-scrolled', hasPassedStart);
-    const pageOverlay = document.querySelector<HTMLElement>('.page-scroll-overlay');
-    pageOverlay?.classList.toggle('opacity-100', hasPassedStart);
-    pageOverlay?.classList.toggle('opacity-0', !hasPassedStart);
-
-    if (RevealOnScrollDirective.scrollTimeout) {
-      clearTimeout(RevealOnScrollDirective.scrollTimeout);
-    }
-
-    RevealOnScrollDirective.scrollTimeout = setTimeout(() => {
-      document.body.classList.remove('is-scrolling');
-      RevealOnScrollDirective.scrollTimeout = null;
-    }, 180);
-  };
+  private startObserver: IntersectionObserver | null = null;
 
   ngAfterViewInit(): void {
     const element = this.elementRef.nativeElement;
+    this.initializeStartOverlay(element);
 
     this.renderer.addClass(element, 'transition-all');
     this.renderer.addClass(element, 'duration-1000');
@@ -81,17 +47,33 @@ export class RevealOnScrollDirective implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.observer?.disconnect();
     this.observer = null;
+    this.startObserver?.disconnect();
+    this.startObserver = null;
+  }
+
+  private initializeStartOverlay(element: HTMLElement): void {
+    const startSection = element.querySelector<HTMLElement>('#inicio');
+    const pageOverlay = document.querySelector<HTMLElement>('.page-scroll-overlay');
+
+    if (!startSection || !pageOverlay || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.startObserver = new IntersectionObserver(
+      ([entry]) => {
+        const hasPassedStart = !entry.isIntersecting && entry.boundingClientRect.bottom <= 0;
+        pageOverlay.classList.toggle('opacity-100', hasPassedStart);
+        pageOverlay.classList.toggle('opacity-0', !hasPassedStart);
+      },
+      { threshold: 0 },
+    );
+
+    this.startObserver.observe(startSection);
   }
 
   private initializeHiddenState(element: HTMLElement): void {
-    const direction = RevealOnScrollDirective.scrollDirection;
-    if (direction === 'down') {
-      this.renderer.addClass(element, 'translate-y-6');
-      this.renderer.removeClass(element, '-translate-y-6');
-    } else {
-      this.renderer.addClass(element, '-translate-y-6');
-      this.renderer.removeClass(element, 'translate-y-6');
-    }
+    this.renderer.addClass(element, 'translate-y-6');
+    this.renderer.removeClass(element, '-translate-y-6');
   }
 
   private revealElement(element: HTMLElement): void {

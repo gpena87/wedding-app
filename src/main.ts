@@ -8,24 +8,19 @@ const hideStartupLoader = () => {
     return;
   }
 
-  loader.classList.add('is-hidden');
-  window.setTimeout(() => loader.remove(), 280);
+  loader.classList.add('opacity-0', 'pointer-events-none');
+  loader.addEventListener('transitionend', () => loader.remove(), { once: true });
 };
 
 const waitForCompleteLoad = () => {
   return new Promise<void>((resolve) => {
-    // Si ya está completamente cargado
     if (document.readyState === 'complete') {
       resolve();
       return;
     }
 
-    // Esperar a que el documento esté completamente listo
     window.addEventListener('load', () => {
-      // Esperar un poco más para asegurar que todo se renderizó
-      setTimeout(() => {
-        resolve();
-      }, 2000);
+      resolve();
     }, { once: true });
   });
 };

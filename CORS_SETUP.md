@@ -12,7 +12,7 @@ app.use(cors({
   origin: [
     'http://localhost:4200',           // desarrollo local
     'http://localhost:3000',           // si tienes otro puerto local
-    'https://wedding-api-production-2678.up.railway.app'
+    'https://wedding-mj-g.up.railway.app' // frontend en producción
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -41,7 +41,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:4200',
-      'https://wedding-api-production-2678.up.railway.app'
+      'https://wedding-mj-g.up.railway.app'
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -61,7 +61,7 @@ import fastifyCors from '@fastify/cors';
 app.register(fastifyCors, {
   origin: [
     'http://localhost:4200',
-    'https://wedding-api-production-2678.up.railway.app'
+    'https://wedding-mj-g.up.railway.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -73,20 +73,22 @@ app.register(fastifyCors, {
 
 ```bash
 curl -i -X OPTIONS 'https://wedding-api-production-2678.up.railway.app/api/users' \
-  -H 'Origin: https://wedding-api-production-2678.up.railway.app' \
-  -H 'Access-Control-Request-Method: POST'
+  -H 'Origin: https://wedding-mj-g.up.railway.app' \
+  -H 'Access-Control-Request-Method: POST' \
+  -H 'Access-Control-Request-Headers: content-type'
 ```
 
 Debe retornar headers como:
 ```
-Access-Control-Allow-Origin: https://wedding-api-production-2678.up.railway.app
+Access-Control-Allow-Origin: https://wedding-mj-g.up.railway.app
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Allow-Headers: Content-Type, Authorization
 ```
 
 ## Pasos en tu repo
 
-1. **Accede a tu backend** en Railroad/Cloud donde está hosteada la API.
+1. **Accede a tu backend** en Railway donde está hosteada la API.
 2. Busca donde importas/usas CORS en tu código.
 3. Agrega la configuración anterior según tu framework.
-4. Usa esta app en frontend con `npm run build`.
+4. Despliega el backend y vuelve a probar el preflight.
+5. Usa esta app en frontend con `npm run build`.

@@ -12,17 +12,21 @@ export class GiftComponent {
   copiedMessage = signal('');
 
   bankAccount = signal({
-    bank: 'Banco Estado',
-    accountHolder: 'Camila Gonzalez',
-    accountNumber: '12345678-9',
-    email: 'camilagonzalez@email.com'
+    bank: 'Banco Itaú',
+    rut: '17.333.422-2',
+    accountHolder: 'MARIA JOSE GONZALEZ RODRIGUEZ',
+    accountType: 'Cuenta Corriente',
+    accountNumber: '0223049072',
+    email: 'MAJOSE.GON.ROD@GMAIL.COM'
   });
 
   async copyBankDetails(): Promise<void> {
     const details = this.bankAccount();
     const text = [
       `Banco: ${details.bank}`,
+      `RUT: ${details.rut}`,
       `Titular: ${details.accountHolder}`,
+      `Tipo de Cuenta: ${details.accountType}`,
       `Cuenta: ${details.accountNumber}`,
       `Email: ${details.email}`,
     ].join('\n');

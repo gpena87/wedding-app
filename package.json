@@ -7,6 +7,8 @@
     "start:4200": "ng serve --port 4200",
     "start:dist": "serve -s dist/wedding-app/browser",
     "build": "ng build",
+    "build:qa": "ng build --configuration qa",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

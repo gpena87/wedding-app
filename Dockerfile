@@ -8,7 +8,9 @@ RUN npm ci
 
 COPY . .
 
-RUN npm run build
+ARG BUILD_ENV=production
+
+RUN npx ng build --configuration $BUILD_ENV
 
 FROM node:20-alpine
 

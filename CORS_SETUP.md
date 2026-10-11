@@ -13,7 +13,7 @@ app.use(cors({
     'http://localhost:4200',           // desarrollo local
     'http://localhost:3000',           // si tienes otro puerto local
     'https://wedding-mj-g.up.railway.app', // frontend en producción
-    'wedding-app-qa.up.railway.app'
+    'https://wedding-app-qa.up.railway.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],

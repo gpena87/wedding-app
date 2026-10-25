@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-itinerary',
-  imports: [],
+  imports: [RevealOnScrollDirective],
   templateUrl: './itinerary.component.html',
 })
 export class ItineraryComponent {

@@ -1,15 +1,15 @@
 <footer id="despedida" class="relative overflow-hidden bg-[#e9dfeb]">
   <div class="relative mx-auto max-w-4xl px-6 py-20 text-center sm:px-8 lg:py-24">
-    <p class="text-xs tracking-[0.32em] text-[#65516f] uppercase sm:text-sm">Gracias por acompañarnos</p>
+    <p class="text-xs tracking-[0.32em] text-[#65516f] uppercase sm:text-sm" [innerHTML]="title()"></p>
 
     <h2 class="mx-auto mt-6 max-w-2xl text-2xl leading-relaxed text-[#6f5735] sm:text-3xl">
-      El amor es nuestra promesa y ustedes son el testimonio de nuestra felicidad.
+      <span [innerHTML]="subtitle1()"></span>
     </h2>
 
     <div class="mx-auto mt-8 h-px w-32 bg-[#947fa0]/50"></div>
 
-    <p class="mt-8 text-base text-[#7c6541] sm:text-lg">Con cariño,</p>
-    <p class="mt-2 text-2xl font-medium tracking-wide text-[#957845] sm:text-3xl">MJ &amp; G</p>
+    <p class="mt-8 text-base text-[#7c6541] sm:text-lg"><span [innerHTML]="subtitle2()"></span></p>
+    <p class="mt-2 text-2xl font-medium tracking-wide text-[#957845] sm:text-3xl"><span [innerHTML]="subtitle3()"></span></p>
 
     <a
       href="#inicio"
@@ -17,7 +17,6 @@
     >
       Volver al inicio
     </a>
-
-    <p class="mt-8 text-xs tracking-[0.2em] text-[#65516f] uppercase sm:text-sm">Nos casamos · 2026</p>
+    <p class="mt-8 text-xs tracking-[0.2em] text-[#65516f] uppercase sm:text-sm"><span [innerHTML]="subtitle4()"></span></p>
   </div>
 </footer>

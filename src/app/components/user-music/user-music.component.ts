@@ -10,8 +10,8 @@ import { environment } from '../../../environments/environment';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserMusicComponent {
-  title = signal('Nuestra playlist de Spotify');
-  subtitle = signal('Hemos creado una playlist especial en Spotify con canciones que significan mucho para nosotros. ¡Esperamos que disfrutes escuchándola tanto como nosotros disfrutamos seleccionando cada canción!');
+  title = signal('Ayudanos con la música');
+  subtitle = signal('Agrega las canciones que no pueden faltar en la fiesta en nuestra playlist colaborativa que compartiremos con el DJ');
 
   private readonly sanitizer = inject(DomSanitizer);
 

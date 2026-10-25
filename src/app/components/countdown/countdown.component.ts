@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, signal, inject, ChangeDetectionStrategy } from '@angular/core';
 
 // Wedding date: June 22, 2026 at 00:00 UTC
-const WEDDING_DATE = new Date(2027, 3, 20, 0, 0, 0).getTime();
+const WEDDING_DATE = new Date(2027, 3, 20, 17, 0, 0).getTime();
 
 interface CountdownTime {
   days: number;

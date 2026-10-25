@@ -7,15 +7,15 @@
         decoding="async"
         class="mx-auto h-auto w-full max-w-[13rem] object-contain opacity-75 grayscale sm:max-w-xs"
       />
-      <p class="mt-2 text-xs uppercase tracking-[0.45em] text-[#76658f]">Nuestra boda</p>
+      <p class="mt-2 text-xs uppercase tracking-[0.45em] text-[#76658f]" [innerHTML]="subtitle3()"></p>
       <h2 class="mx-auto mt-4 max-w-2xl text-center text-2xl font-light uppercase tracking-[0.2em] text-[#665579] sm:mt-6 sm:text-3xl sm:tracking-[0.35em] md:text-4xl">
-      MARÍA JOSÉ
+      {{ name1() }}
       </h2>
       <h1
         class="font-script mx-auto mt-2 text-center text-4xl leading-none tracking-[0.04em] text-[#5d4c73] sm:mt-4 sm:text-6xl md:text-7xl"
         aria-label="Nombres de los novios"
       >
-        González Rodríguez<br />
+        {{ lastName1() }}<br />
       </h1>
       <h1
         class="font-script mx-auto mt-1 flex h-12 w-12 items-center justify-center rounded-full bg-[#c9bde0] text-center text-2xl leading-none text-white shadow-sm sm:h-14 sm:w-14 sm:text-3xl"
@@ -25,17 +25,16 @@
       </h1>
 
       <h2 class="mx-auto mt-2 max-w-2xl text-center text-xl font-light uppercase tracking-[0.2em] text-[#665579] sm:mt-4 sm:text-2xl sm:tracking-[0.35em] md:text-3xl">
-      GONZALO ANDRÉS
+      {{ name2() }}
       </h2>
       <h1
         class="font-script mx-auto mt-2 text-center text-4xl leading-none tracking-[0.04em] text-[#5d4c73] sm:mt-4 sm:text-6xl md:text-7xl"
         aria-label="Nombres de los novios"
       >
-        Peña Gutierrez
+        {{ lastName2() }}
       </h1>
-
-      <p class="mx-auto mt-2 max-w-2xl text-center text-sm leading-relaxed tracking-wide text-[#76658f] sm:text-base">El amor es nuestra<br />
-      promesa y ustedes son<br />
-      el testimonio de nuestra felicidad.</p>
+      <p class="mx-auto mt-2 max-w-2xl text-center text-sm leading-relaxed tracking-wide text-[#76658f] sm:text-base" [innerHTML]="subtitle4()">
+      </p>
     </div>
   </section>
+  

@@ -29,9 +29,11 @@ export class RevealOnScrollDirective implements AfterViewInit, OnDestroy {
     this.observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
+          const target = entry.target as HTMLElement;
           if (entry.isIntersecting) {
-            this.revealElement(entry.target as HTMLElement);
-            this.observer?.unobserve(entry.target);
+            this.revealElement(target);
+          } else {
+            this.hideElement(target, entry.boundingClientRect.top < 0);
           }
         }
       },
@@ -74,6 +76,14 @@ export class RevealOnScrollDirective implements AfterViewInit, OnDestroy {
   private initializeHiddenState(element: HTMLElement): void {
     this.renderer.addClass(element, 'translate-y-6');
     this.renderer.removeClass(element, '-translate-y-6');
+  }
+
+  private hideElement(element: HTMLElement, isAbove: boolean): void {
+    this.renderer.removeClass(element, 'opacity-100');
+    this.renderer.removeClass(element, 'translate-y-0');
+    this.renderer.addClass(element, 'opacity-0');
+    this.renderer.addClass(element, isAbove ? '-translate-y-6' : 'translate-y-6');
+    this.renderer.removeClass(element, isAbove ? 'translate-y-6' : '-translate-y-6');
   }
 
   private revealElement(element: HTMLElement): void {

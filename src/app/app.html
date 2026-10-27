@@ -1,4 +1,4 @@
-<audio #bgAudio preload="auto" autoplay loop style="display: none;">
+<audio #bgAudio preload="auto" loop playsinline style="display: none;">
 	<source src="assets/branding/AcrosstheStars.mp3" type="audio/mpeg" />
 </audio>
 
@@ -7,7 +7,8 @@
 	type="button"
 	data-audio-toggle="true"
 	class="fixed top-4 right-4 z-9999 p-2 rounded-full bg-[#65516f] text-white hover:bg-[#947fa0] transition-colors opacity-100 pointer-events-auto"
-	title="Activar/Desactivar sonido"
+	[attr.title]="isMuted() ? 'Activar música' : 'Desactivar música'"
+	[attr.aria-label]="isMuted() ? 'Activar música' : 'Desactivar música'"
 	style="outline: none; border: none; cursor: pointer;"
 >
 	<svg *ngIf="isMuted()" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

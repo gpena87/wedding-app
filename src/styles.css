@@ -88,6 +88,12 @@ main {
   }
 }
 
+main > .page-scroll-overlay {
+  height: 100vh;
+  height: 100lvh;
+  transform: translateZ(0);
+}
+
 main > *:not(.page-scroll-overlay) {
   position: relative;
   z-index: 40;

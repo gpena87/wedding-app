@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
   templateUrl: './gift.component.html',
 })
 export class GiftComponent {
-  title = signal('Regalo');
+  // title = signal('Regalo');
   subtitle = signal('¿Quieres hacernos un regalo?');
   subtitle2 = signal('Tu presencia es el mejor regalo que podríamos pedir. Sin embargo, si deseas contribuir a nuestro fondo para la luna de miel, aquí tienes nuestras opciones de transferencia.');
   copiedMessage = signal('');

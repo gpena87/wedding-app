@@ -8,5 +8,5 @@ import { Component, signal } from '@angular/core';
 })
 export class DressCodeComponent {
   readonly title = signal('Dress Code');
-  readonly subtitle = signal('Queremos que te sientas comodo y elegante para celebrar juntos.');
+  readonly subtitle = signal('Formal y elegante, porque la ocasión lo amerita.');
 }

@@ -10,7 +10,7 @@ export class StartComponent {
   subtitle = signal('Ma. José\ny Gonzalo');
   subtitle2 = signal('Estamos emocionados de compartir este momento tan especial con ustedes. ¡Gracias por ser parte de nuestra historia!');
   subtitle3 = signal('Nuestra boda');
-  subtitle4 = signal('Tenemos algo muy bonito que celebrar <br /> y queremos compartirlo con las personas que más queremos.');
+  subtitle4 = signal('Tenemos algo muy bonito que celebrar <br /> y queremos hacerlo rodeados de las personas que forman parte de nuestra vida.');
   name1 = signal('MARÍA JOSÉ');
   name2 = signal('GONZALO ANDRÉS');
   lastName1 = signal('González Rodríguez');

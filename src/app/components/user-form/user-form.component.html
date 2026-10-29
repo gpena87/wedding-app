@@ -1,6 +1,13 @@
 <section id="confirmacion" class="mx-auto max-w-6xl bg-transparent px-4 py-10 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-2xl p-5 text-center sm:p-8">
-      <h2 class="text-3xl font-light text-[#957845] sm:text-5xl tracking-wider">{{ title() }}</h2>
+      <img
+        src="assets/branding/rsvp.webp"
+        alt="Ilustración de un sobre de invitación con un corazón"
+        class="mx-auto h-40 w-full max-w-xs object-contain sm:h-52"
+        loading="lazy"
+        decoding="async"
+      />
+      <h2 class="mt-2 text-3xl font-light text-[#957845] sm:text-5xl tracking-wider">{{ title() }}</h2>
       <p class="mt-4 text-base leading-relaxed text-[#957845]">{{ subtitle() }}</p>
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate class="mt-6 text-center">
         <fieldset class="mb-0">
@@ -181,14 +188,19 @@
         <span>{{ errorMessage() }}</span>
       </div>
 
-      <div *ngIf="isSuccessModalOpen()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-sm">
-        <div class="w-full max-w-md rounded-2xl bg-white p-6 text-left shadow-2xl">
+      <dialog
+        #successDialog
+        (close)="closeSuccessPopup()"
+        (click)="$event.target === successDialog ? closeSuccessPopup() : null"
+        class="m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl bg-transparent p-0 backdrop:bg-black/35 backdrop:backdrop-blur-sm"
+      >
+        <div class="w-full rounded-2xl bg-white p-6 text-left shadow-2xl">
           <h3 class="text-xl font-bold text-[#6f5735]">Registro completado</h3>
           <p class="py-3 text-[#7c6541]">{{ successMessage() }}</p>
           <div class="mt-3 flex justify-end">
             <button type="button" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700" (click)="closeSuccessPopup()">Aceptar</button>
           </div>
         </div>
-      </div>
+      </dialog>
     </div>
 </section>

@@ -1,0 +1,1 @@
+import{m as i,x as o}from"./chunk-WDYSRVJU.js";var a=class e{isMuted=o(!0);audio;register(t){this.audio=t}start(){let t=this.audio;t&&(t.volume=.3,t.muted=!1,t.play().then(()=>{this.isMuted.set(!1)}).catch(()=>{t.muted=!0,this.isMuted.set(!0)}))}static \u0275fac=function(r){return new(r||e)};static \u0275prov=i({token:e,factory:e.\u0275fac,providedIn:"root"})};export{a};

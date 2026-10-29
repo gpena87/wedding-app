@@ -1,23 +1,107 @@
 <section id="galeria" class="relative overflow-hidden bg-transparent">
-<div class="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-10 px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
-  <div class="relative mx-auto aspect-square w-full max-w-[36rem] overflow-hidden border-[10px] border-[#c9bde0] bg-[#f1eff8] p-2 shadow-[0_12px_26px_rgba(109,90,138,0.2)]">
-    <div class="pointer-events-none absolute inset-2 z-10 rounded-none bg-[radial-gradient(circle_at_center,transparent_60%,rgba(91,76,115,0.12)_100%)]"></div>
-    @if (isImageLoading) {
+  <div class="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
+
+    <div
+      class="relative w-full max-w-[36rem]"
+      (mouseenter)="stopAutoplay()"
+      (mouseleave)="startAutoplay()"
+      (touchstart)="stopAutoplay()"
+      (touchend)="startAutoplay()"
+    >
       <div
-        class="absolute inset-0 z-10 flex items-center justify-center bg-white/80"
-        aria-label="Cargando imagen"
+        #scroller
+        (scroll)="onScroll()"
+        class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        <div class="h-10 w-10 animate-spin rounded-full border-4 border-[#8a78aa]/30 border-t-[#8a78aa]" aria-hidden="true"></div>
+        @for (image of images; track $index; let i = $index) {
+          <div class="w-full shrink-0 snap-center">
+            <button
+              type="button"
+              (click)="open(i)"
+              class="relative block aspect-square w-full cursor-zoom-in overflow-hidden bg-[#f1eff8] shadow-[0_12px_26px_rgba(109,90,138,0.2)]"
+              [attr.aria-label]="'Ampliar foto ' + (i + 1)"
+            >
+              @if (!loaded()[i]) {
+                <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/80" aria-label="Cargando imagen">
+                  <div class="h-10 w-10 animate-spin rounded-full border-4 border-[#8a78aa]/30 border-t-[#8a78aa]" aria-hidden="true"></div>
+                </div>
+              }
+              <img
+                [src]="image.src"
+                [alt]="image.alt"
+                [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+                decoding="async"
+                (load)="markLoaded(i)"
+                class="h-full w-full object-cover"
+              />
+            </button>
+          </div>
+        }
       </div>
-    }
-    <img
-      src="assets/branding/gallery.jpg"
-      alt="Iniciales de los novios"
-      loading="lazy"
-      decoding="async"
-      (load)="isImageLoading = false"
-      class="mx-auto aspect-square h-full w-full object-cover"
-    />
+
+      <button
+        type="button"
+        (click)="prevSlide()"
+        class="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#65516f]/80 px-3 py-2 text-2xl leading-none text-white hover:bg-[#947fa0]"
+        aria-label="Foto anterior"
+      >&#8249;</button>
+      <button
+        type="button"
+        (click)="nextSlide()"
+        class="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#65516f]/80 px-3 py-2 text-2xl leading-none text-white hover:bg-[#947fa0]"
+        aria-label="Foto siguiente"
+      >&#8250;</button>
+
+      <div class="mt-5 flex justify-center gap-2">
+        @for (image of images; track $index; let i = $index) {
+          <button
+            type="button"
+            (click)="goTo(i)"
+            class="h-2.5 rounded-full transition-all duration-300"
+            [class]="current() === i ? 'w-6 bg-[#65516f]' : 'w-2.5 bg-[#c9bde0]'"
+            [attr.aria-label]="'Ir a la foto ' + (i + 1)"
+          ></button>
+        }
+      </div>
+    </div>
   </div>
-</div>
+
+  @if (activeIndex() !== null) {
+    <div
+      class="fixed inset-0 z-[10000] flex items-center justify-center bg-[#2f2838]/90 p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visor de fotos"
+      (click)="close()"
+    >
+      <button
+        type="button"
+        (click)="close()"
+        class="absolute right-4 top-4 rounded-full bg-[#65516f] px-3 py-1 text-xl leading-none text-white hover:bg-[#947fa0]"
+        aria-label="Cerrar"
+      >&times;</button>
+
+      @if (images.length > 1) {
+        <button
+          type="button"
+          (click)="prev(); $event.stopPropagation()"
+          class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-[#65516f] px-3 py-2 text-2xl leading-none text-white hover:bg-[#947fa0] sm:left-6"
+          aria-label="Foto anterior"
+        >&#8249;</button>
+        <button
+          type="button"
+          (click)="next(); $event.stopPropagation()"
+          class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-[#65516f] px-3 py-2 text-2xl leading-none text-white hover:bg-[#947fa0] sm:right-6"
+          aria-label="Foto siguiente"
+        >&#8250;</button>
+      }
+
+      <img
+        [src]="images[activeIndex()!].src"
+        [alt]="images[activeIndex()!].alt"
+        (click)="$event.stopPropagation()"
+        class="max-h-[85svh] max-w-full object-contain shadow-2xl"
+      />
+    </div>
+  }
 </section>

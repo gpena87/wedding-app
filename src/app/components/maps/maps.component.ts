@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
   templateUrl: './maps.component.html',
 })
 export class MapsComponent {
-  title = signal('Ceremonia');
+  title = signal('Ceremonia y celebración');
   addressDetail = signal('Av. la Compañía s/n esq. Las Delicias\nCodegua, Rancagua — VI Región');
   addressDescription = signal('Casona Las Delicias');
   addressLink = signal('https://maps.app.goo.gl/7MauQC4rtDqfdtmk8');

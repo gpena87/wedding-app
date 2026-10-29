@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, effect, inject, signal, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { finalize } from 'rxjs';
@@ -25,6 +25,7 @@ export class UserFormComponent {
   readonly successMessage = signal<string | null>(null);
   readonly errorMessage = signal<string | null>(null);
   readonly isOtroSelected = signal(false);
+  private readonly successDialog = viewChild<ElementRef<HTMLDialogElement>>('successDialog');
 
   readonly userForm = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -38,6 +39,19 @@ export class UserFormComponent {
   });
 
   constructor() {
+    effect(() => {
+      const dialog = this.successDialog()?.nativeElement;
+      if (!dialog) {
+        return;
+      }
+
+      if (this.isSuccessModalOpen() && !dialog.open) {
+        dialog.showModal();
+      } else if (!this.isSuccessModalOpen() && dialog.open) {
+        dialog.close();
+      }
+    });
+
     this.userForm.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
       if (this.successMessage()) {
         this.successMessage.set(null);

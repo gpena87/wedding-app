@@ -3,6 +3,7 @@
 </audio>
 
 <button
+	*ngIf="showAudioToggle()"
 	(click)="toggleAudio()"
 	type="button"
 	data-audio-toggle="true"

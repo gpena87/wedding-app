@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, ViewChild, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter, map } from 'rxjs';
 import { AudioService } from './services/audio.service';
 
 @Component({
@@ -13,6 +15,16 @@ export class App implements AfterViewInit {
 
   private readonly audioService = inject(AudioService);
   readonly isMuted = this.audioService.isMuted;
+
+  private readonly router = inject(Router);
+  private readonly currentUrl = toSignal(
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+      map((event) => event.urlAfterRedirects),
+    ),
+    { initialValue: '' },
+  );
+  readonly showAudioToggle = computed(() => this.currentUrl() !== '' && this.currentUrl().split(/[?#]/)[0] !== '/');
 
   ngAfterViewInit(): void {
     this.audioService.register(this.bgAudio.nativeElement);

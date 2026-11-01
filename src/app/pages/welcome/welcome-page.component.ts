@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { AudioService } from '../../services/audio.service';
 
@@ -9,6 +9,8 @@ import { AudioService } from '../../services/audio.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class WelcomePage implements OnDestroy {
+  readonly isOpening = signal(false);
+
   constructor(
     private readonly router: Router,
     private readonly audioService: AudioService,
@@ -23,7 +25,12 @@ export default class WelcomePage implements OnDestroy {
   }
 
   enter(): void {
+    if (this.isOpening()) {
+      return;
+    }
+
+    this.isOpening.set(true);
     this.audioService.start();
-    this.router.navigate(['/invitacion']);
+    setTimeout(() => this.router.navigate(['/invitacion']), 900);
   }
 }

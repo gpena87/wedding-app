@@ -203,9 +203,13 @@
               [href]="calendarUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-full bg-[#957845] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#7d5f35]"
+              (click)="onCalendarClick()"
+              [class.pointer-events-none]="isOpeningCalendar()"
+              [class.opacity-80]="isOpeningCalendar()"
+              class="inline-flex items-center gap-2 rounded-full bg-[#957845] px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#7d5f35]"
             >
-              Agregar a Google Calendar
+              <span *ngIf="isOpeningCalendar()" class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"></span>
+              {{ isOpeningCalendar() ? 'Abriendo calendario...' : 'Agregar a Google Calendar' }}
             </a>
             <button type="button" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700" (click)="closeSuccessPopup()">Aceptar</button>
           </div>

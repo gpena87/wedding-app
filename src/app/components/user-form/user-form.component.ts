@@ -25,6 +25,7 @@ export class UserFormComponent {
   readonly successMessage = signal<string | null>(null);
   readonly errorMessage = signal<string | null>(null);
   readonly isOtroSelected = signal(false);
+  readonly canAddToCalendar = signal(false);
   private readonly successDialog = viewChild<ElementRef<HTMLDialogElement>>('successDialog');
 
   readonly userForm = this.fb.nonNullable.group({
@@ -75,6 +76,15 @@ export class UserFormComponent {
     this.successMessage.set(null);
   }
 
+  readonly calendarUrl = `https://calendar.google.com/calendar/render?${new URLSearchParams({
+    action: 'TEMPLATE',
+    text: 'Boda María José y Gonzalo Andrés',
+    dates: '20270320T183000/20270321T023000',
+    ctz: 'America/Santiago',
+    location: 'Av. la Compañía s/n esq. Las Delicias, Codegua, Rancagua — VI Región',
+    details: 'Te esperamos para celebrar con nosotros.'
+  }).toString()}`;
+
   onSubmit(): void {
     if (this.userForm.invalid) {
       this.userForm.markAllAsTouched();
@@ -115,6 +125,7 @@ export class UserFormComponent {
           }, { emitEvent: false });
           this.toggleAttendanceDependentFields(false);
           this.isOtroSelected.set(false);
+          this.canAddToCalendar.set(isAttending);
           this.successMessage.set('Registro enviado correctamente.');
           this.isSuccessModalOpen.set(true);
         },

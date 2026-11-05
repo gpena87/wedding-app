@@ -14,7 +14,7 @@ import { UsersService } from '../../services/users.service';
 })
 export class UserFormComponent {
   title = signal('Confirma tu asistencia');
-  subtitle = signal('¡Nos encantaría contar con tu presencia! Por favor, confirma tu asistencia para ayudarnos a planificar mejor el evento.');
+  subtitle = signal('¡Nos encantaría contar con tu presencia!\nPor favor, confirma tu asistencia hasta 30 días de la antes de la boda para ayudarnos a planificar mejor el evento.');
 
   private readonly fb = inject(FormBuilder);
   private readonly usersService = inject(UsersService);

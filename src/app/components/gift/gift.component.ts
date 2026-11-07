@@ -13,7 +13,7 @@ export class GiftComponent {
   bankAccount = signal({
     bank: 'Banco Itaú',
     rut: '17.333.422-2',
-    accountHolder: 'MARIA JOSE GONZALEZ RODRIGUEZ',
+    accountHolder: 'Maria Jose Gonzalez Rodriguez',
     accountType: 'Cuenta Corriente',
     accountNumber: '0223049072',
     email: 'majose.gon.rod@gmail.com'

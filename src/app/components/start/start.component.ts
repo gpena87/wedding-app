@@ -14,5 +14,5 @@ export class StartComponent {
   name1 = signal('MARÍA JOSÉ');
   name2 = signal('GONZALO ANDRÉS');
   lastName1 = signal('González Rodríguez');
-  lastName2 = signal('Peña Gutierrez');
+  lastName2 = signal('Peña Gutiérrez');
 }

@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
   templateUrl: './start.component.html',
 })
 export class StartComponent {
-  title = signal('Invitacion de boda');
+  // title = signal('Invitación de boda');
   subtitle = signal('Ma. José\ny Gonzalo');
   subtitle2 = signal('Estamos emocionados de compartir este momento tan especial con ustedes. ¡Gracias por ser parte de nuestra historia!');
   subtitle3 = signal('Nuestra boda');

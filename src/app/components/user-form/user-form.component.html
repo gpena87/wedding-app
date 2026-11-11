@@ -26,7 +26,7 @@
             [class.text-red-600]="userForm.controls.name.touched && userForm.controls.name.invalid"
             [class.invisible]="!(userForm.controls.name.touched && userForm.controls.name.invalid)"
           >
-            Ingresa un nombre valido.
+            Ingresa un nombre válido.
           </p>
         </fieldset>
         <fieldset class="mb-0">
@@ -35,7 +35,7 @@
             id="lastName"
             type="text"
             formControlName="lastName"
-            placeholder="Ej. Perez"
+            placeholder="Ej. Pérez"
             class="w-full rounded-xl border border-[#957845]/35 bg-white/40 px-4 py-3 text-[#6f5735] placeholder:text-[#957845]/60 transition focus:outline-none focus:ring-2 focus:ring-[#957845]/20"
             [class.border-red-500]="userForm.controls.lastName.touched && userForm.controls.lastName.invalid"
             [class.ring-red-200]="userForm.controls.lastName.touched && userForm.controls.lastName.invalid"
@@ -45,7 +45,7 @@
             [class.text-red-600]="userForm.controls.lastName.touched && userForm.controls.lastName.invalid"
             [class.invisible]="!(userForm.controls.lastName.touched && userForm.controls.lastName.invalid)"
           >
-            Ingresa un apellido valido.
+            Ingresa un apellido válido.
           </p>
         </fieldset>
 
@@ -67,7 +67,7 @@
             [class.text-red-600]="userForm.controls.confirmation.touched && userForm.controls.confirmation.invalid"
             [class.invisible]="!(userForm.controls.confirmation.touched && userForm.controls.confirmation.invalid)"
           >
-            Selecciona una opcion.
+            Selecciona una opción.
           </p>
         </fieldset>
 
@@ -87,12 +87,12 @@
             [class.text-red-600]="userForm.controls.email.touched && userForm.controls.email.invalid"
             [class.invisible]="!(userForm.controls.email.touched && userForm.controls.email.invalid)"
           >
-            Ingresa un correo valido.
+            Ingresa un correo válido.
           </p>
         </fieldset>
 
         <fieldset class="mb-0">
-          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Telefono</legend>
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Teléfono</legend>
           <input
             id="numberPhone"
             type="tel"
@@ -107,12 +107,12 @@
             [class.text-red-600]="userForm.controls.numberPhone.touched && userForm.controls.numberPhone.invalid"
             [class.invisible]="!(userForm.controls.numberPhone.touched && userForm.controls.numberPhone.invalid)"
           >
-            Ingresa un numero de telefono valido.
+            Ingresa un número de teléfono válido.
           </p>
         </fieldset>
 
         <fieldset class="mb-0">
-          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">¿Restriccion alimentaria?</legend>
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">¿Restricción alimentaria?</legend>
           <select
             id="restriccion"
             formControlName="restriccion"
@@ -122,7 +122,7 @@
           >
             <option value="" class="text-base">Selecciona una opción</option>
             <option value="No" class="text-base">No</option>
-            <option value="Celiaco" class="text-base">Celiaco</option>
+            <option value="Celiaco" class="text-base">Celíaco</option>
             <option value="Vegano" class="text-base">Vegano</option>
             <option value="Vegetariano" class="text-base">Vegetariano</option>
             <option value="Otro" class="text-base">Otro</option>
@@ -132,12 +132,12 @@
             [class.text-red-600]="userForm.controls.restriccion.touched && userForm.controls.restriccion.invalid"
             [class.invisible]="!(userForm.controls.restriccion.touched && userForm.controls.restriccion.invalid)"
           >
-            Selecciona una opcion.
+            Selecciona una opción.
           </p>
         </fieldset>
 
         <fieldset *ngIf="isOtroSelected()" class="mb-0">
-          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Especifica tu restriccion</legend>
+          <legend class="mb-0 text-base font-semibold uppercase tracking-widest text-[#957845]">Especifica tu restricción</legend>
           <input
             id="restriccionOtro"
             type="text"
@@ -167,7 +167,7 @@
             [class.text-red-600]="userForm.controls.message.touched && userForm.controls.message.invalid"
             [class.invisible]="!(userForm.controls.message.touched && userForm.controls.message.invalid)"
           >
-            Ingresa un mensaje valido.
+            Ingresa un mensaje válido.
           </p>
         </fieldset>
 
@@ -178,7 +178,7 @@
             [disabled]="userForm.invalid || isSubmitting()"
           >
             <span *ngIf="isSubmitting()" class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]"></span>
-            {{ isSubmitting() ? 'Enviando...' : 'Enviar Confirmación' }}
+            {{ isSubmitting() ? 'Enviando...' : 'Enviar confirmación' }}
           </button>
         </div>
 

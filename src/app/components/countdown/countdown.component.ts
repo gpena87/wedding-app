@@ -19,8 +19,8 @@ interface CountdownTime {
 export class CountdownComponent implements OnInit, OnDestroy {
   title = signal('¡La cuenta regresiva ha comenzado!');
   subtitle = signal('Estamos emocionados de compartir este momento contigo. ¡Faltan pocos días para la gran celebración!');
-  date = signal('20 de MARZO 2027');
-  time = signal('18:00 hrs.');
+  date = signal('20 de marzo de 2027');
+  time = signal('18:00 h');
 
   days = signal(0);
   hours = signal(0);

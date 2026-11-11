@@ -8,7 +8,7 @@ import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.direc
 })
 export class ItineraryComponent {
   title = signal('Itinerario');
-  subtitle = signal('Organizate con tiempo para no perderte ningun momento especial.');
+  subtitle = signal('Organízate con tiempo para no perderte ningún momento especial.');
   events = signal([
     { title: 'Citación', time: '18:00 pm', image: 'bouquet.png' },
     { title: 'Ceremonia', time: '18:30 pm', image: 'rings.png' },

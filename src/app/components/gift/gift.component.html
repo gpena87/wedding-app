@@ -3,7 +3,7 @@
     <div class="w-full max-w-2xl p-5 text-center sm:p-8">
       <img
         src="assets/branding/gift.webp"
-        alt="Ilustracion de regalos"
+        alt="Ilustración de regalos"
         class="mx-auto h-44 w-full max-w-xs object-contain sm:h-52"
         loading="lazy"
         decoding="async"
@@ -15,16 +15,16 @@
         <p><strong>Banco:</strong> {{ bankAccount().bank }}</p>
         <p><strong>Titular:</strong> {{ bankAccount().accountHolder }}</p>
         <p><strong>RUT:</strong> {{ bankAccount().rut }}</p>
-        <p><strong>Tipo de Cuenta:</strong> {{ bankAccount().accountType }}</p>
+        <p><strong>Tipo de cuenta:</strong> {{ bankAccount().accountType }}</p>
         <p><strong>Cuenta:</strong> {{ bankAccount().accountNumber }}</p>
-        <p><strong>Email:</strong> {{ bankAccount().email }}</p>
+        <p><strong>Correo electrónico:</strong> {{ bankAccount().email }}</p>
       </div>
       <button
         type="button"
         (click)="copyBankDetails()"
         class="mt-6 inline-block rounded-full bg-[#957845] px-8 py-3 text-base font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#7d5f35] hover:shadow-lg shadow-md"
       >
-        Copiar Datos Bancarios
+        Copiar datos bancarios
       </button>
       <p class="mt-3 text-base text-[#957845]" [class.hidden]="!copiedMessage()">{{ copiedMessage() }}</p>
     </div>

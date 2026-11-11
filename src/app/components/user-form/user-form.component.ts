@@ -14,7 +14,7 @@ import { UsersService } from '../../services/users.service';
 })
 export class UserFormComponent {
   title = signal('Confirma tu asistencia');
-  subtitle = signal('¡Nos encantaría contar con tu presencia!\nPor favor, confirma tu asistencia hasta 30 días de la antes de la boda para ayudarnos a planificar mejor el evento.');
+  subtitle = signal('¡Nos encantaría contar con tu presencia!\nPor favor, confirma tu asistencia hasta 30 días antes de la boda para ayudarnos a planificar mejor el evento.');
 
   private readonly fb = inject(FormBuilder);
   private readonly usersService = inject(UsersService);
@@ -137,9 +137,7 @@ export class UserFormComponent {
         },
         error: (error: HttpErrorResponse) => {
           if (error.status === 0) {
-            this.errorMessage.set(
-              'Error intenta más tarde'
-            );
+            this.errorMessage.set('Error: inténtalo más tarde.');
             return;
           }
 
@@ -148,7 +146,7 @@ export class UserFormComponent {
               ? String(error.error.message)
               : null;
 
-          this.errorMessage.set(apiMessage ?? 'No se pudo enviar el formulario. Intentalo nuevamente.');
+          this.errorMessage.set(apiMessage ?? 'No se pudo enviar el formulario. Inténtalo de nuevo.');
         }
       });
   }

@@ -27,7 +27,7 @@ export class GiftComponent {
       `Titular: ${details.accountHolder}`,
       `Tipo de Cuenta: ${details.accountType}`,
       `Cuenta: ${details.accountNumber}`,
-      `Email: ${details.email}`,
+      `Correo electrónico: ${details.email}`,
     ].join('\n');
 
     try {
@@ -46,7 +46,7 @@ export class GiftComponent {
 
       this.copiedMessage.set('Datos bancarios copiados.');
     } catch {
-      this.copiedMessage.set('No se pudo copiar. Intenta nuevamente.');
+      this.copiedMessage.set('No se pudo copiar. Inténtalo de nuevo.');
     }
   }
 }

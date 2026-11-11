@@ -10,8 +10,8 @@ import { environment } from '../../../environments/environment';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserMusicComponent {
-  title = signal('Ayudanos con la música');
-  subtitle = signal('Agrega las canciones que no pueden faltar en la fiesta en nuestra playlist colaborativa que compartiremos con el DJ');
+  title = signal('Ayúdanos con la música');
+  subtitle = signal('Agrega las canciones que no pueden faltar en la fiesta a nuestra lista de reproducción colaborativa. La compartiremos con el DJ.');
 
   private readonly sanitizer = inject(DomSanitizer);
 

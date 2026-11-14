@@ -80,7 +80,7 @@ export class UserFormComponent {
   readonly calendarUrl = `https://calendar.google.com/calendar/render?${new URLSearchParams({
     action: 'TEMPLATE',
     text: 'Boda María José y Gonzalo Andrés',
-    dates: '20270320T183000/20270321T023000',
+    dates: '20270320T180000/20270321T023000',
     ctz: 'America/Santiago',
     location: 'Av. la Compañía s/n esq. Las Delicias, Codegua, Rancagua — VI Región',
     details: 'Te esperamos para celebrar con nosotros.'

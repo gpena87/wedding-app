@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
 })
 export class UserMusicComponent {
   title = signal('Ayúdanos con la música');
-  subtitle = signal('Agrega las canciones que no pueden faltar en la fiesta a nuestra lista de reproducción colaborativa. La compartiremos con el DJ.');
+  subtitle = signal('Escucha nuestra lista de reproducción colaborativa. La compartiremos con el DJ.');
 
   private readonly sanitizer = inject(DomSanitizer);
 

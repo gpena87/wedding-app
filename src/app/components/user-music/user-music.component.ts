@@ -18,5 +18,4 @@ export class UserMusicComponent {
   protected readonly spotifyAutoplayEmbedUrl: SafeResourceUrl =
     this.sanitizer.bypassSecurityTrustResourceUrl(environment.spotifyPlaylistEmbedUrl);
   protected readonly spotifyCollaborativePlaylistUrl = environment.spotifyCollaborativePlaylistUrl;
-  protected readonly spotifyPlaylistInviteUrl = environment.spotifyPlaylistInviteUrl;
 }
